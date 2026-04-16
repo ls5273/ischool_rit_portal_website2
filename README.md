@@ -12,6 +12,6 @@
 - **Client-Side Libraries:** Integrates standard third-party libraries like Bootstrap for responsive layouts and jQuery for client-side interactions and validation.
   
 ## 🛠️ Tech Stack:
-- **Backend:** C#, ASP.NET Core MVC, HttpClient, Bootstrap, jQuery
+- **Backend:** C# and ASP.NET Core MVC
 - **Data Fetching:** HttpClient / System.Net.Http.Json for asynchronous REST API consumption.
 - **Frontend:** HTML5, CSS3, Bootstrap, and jQuery.
