@@ -1,0 +1,35 @@
+﻿@model List<SorakL.Models.UndergraduateModel>
+
+<section class="p-5">
+    <div class="container">
+        <h1 class="text-center mb-4">Undergraduate Degrees</h1>
+
+        @foreach (var degree in Model)
+        {
+            <div class="mb-5 p-4 border rounded shadow-sm bg-light">
+
+                <h3 class="fw-bold">@degree.degreeName</h3>
+                <h5 class="text-muted">@degree.title</h5>
+
+                <p>@degree.description</p>
+
+                <h6 class="fw-bold mt-3">Concentrations:</h6>
+
+                @if (degree.concentrations?.Any() == true)
+                {
+                    <ul>
+                        @foreach (var c in degree.concentrations)
+                        {
+                            <li>@c</li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p><em>No concentrations available.</em></p>
+                }
+
+            </div>
+        }
+    </div>
+</section>

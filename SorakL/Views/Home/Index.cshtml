@@ -1,0 +1,13 @@
+﻿@model AboutModel
+
+<section class="hero p-5 text-center">
+    <div class="container">
+        <h1 class="display-4">@Model.Title</h1>
+        <p class="lead">@Model.Description</p>
+
+        <blockquote class="blockquote mt-4">
+            <p>"@Model.Quote"</p>
+            <footer class="blockquote-footer">@Model.QuoteAuthor</footer>
+        </blockquote>
+    </div>
+</section>

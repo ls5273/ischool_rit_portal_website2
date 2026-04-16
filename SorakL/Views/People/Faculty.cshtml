@@ -1,0 +1,68 @@
+﻿@model List<SorakL.Models.FacultyModel>
+
+<section class="p-5">
+    <div class="container">
+        <h1 class="mb-4 text-center">Faculty</h1>
+
+        <div class="faculty-slider">
+            @foreach (var f in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="@f.ImagePath" class="card-img-top" alt="@f.Name" />
+                        <div class="card-body">
+                            <h5 class="card-title">@f.Name</h5>
+                            <p class="card-text">@f.Title</p>
+                            <p class="card-text"><strong>@f.Tagline</strong></p>
+                            <p class="card-text"><em>@f.InterestArea</em></p>
+                            <p class="card-text">Office: @f.Office</p>
+                            <p class="card-text">Email: @f.Email</p>
+                            <p class="card-text">Phone: @f.Phone</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@section Styles {
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <style>
+        .faculty-slider .card {
+            height: 100%;
+        }
+
+        .faculty-slide {
+            padding: 10px;
+        }
+    </style>
+}
+
+@section Scripts {
+    <!-- Slick Carousel JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.faculty-slider').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true,
+                responsive: [
+                    {
+                        breakpoint: 992,
+                        settings: { slidesToShow: 2 }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: { slidesToShow: 1 }
+                    }
+                ]
+            });
+        });
+    </script>
+}
